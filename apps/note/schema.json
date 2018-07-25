@@ -1,0 +1,6 @@
+{
+  "Note": {
+    "table": "notes",
+    "enableChangeTracking": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "isDaemon": "true",
+  "controller": "Controller.js",
+  "templateMode": "typescript",
+  "application": "note"
+}
