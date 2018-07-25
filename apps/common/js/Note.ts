@@ -4,6 +4,8 @@ import { Supertype, supertypeClass, property, Persistable } from 'amorphic';
 export default class Note extends Persistable(Supertype) {
   @property()
   message: string;
+  id: number;
+
 
   constructor(message: string) {
     super();
@@ -16,3 +18,5 @@ export default class Note extends Persistable(Supertype) {
     await this.amorphic.commit({ transaction: txn });
   }
 }
+
+
