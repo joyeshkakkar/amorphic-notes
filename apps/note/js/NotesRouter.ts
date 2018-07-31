@@ -62,7 +62,20 @@ router.delete('/delete/:id', async (req: Request, res: Response) => {
 });
 
 
-router.patch
+router.put('/update/:id', async (req: Request, res: Response) => {
+    try {
+        console.log('Put handler for /update/:id route');
+        let notesId: string = req.params.id;
+        let message: string = req.body.message;
+        console.log(`notesId ${notesId}`);
+        console.log(`message ${message}`);
+        await Note.findAndUpdateNoteById(notesId,message);
+        return res.status(200).send('Updated note.');
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send(error.message);
+    }
+});
 
 
 export default router;

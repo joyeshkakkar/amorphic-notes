@@ -31,7 +31,6 @@ export default class Note extends Persistable(Supertype) {
     static async findAndDeleteNoteById(notesId: string) {
         try{
             let note : Note = await Note.persistorFetchById(notesId);
-            console.log(note);
             let txn = note.amorphic.begin();
             note.persistorDelete();
             await note.amorphic.commit({transaction: txn});
@@ -41,6 +40,17 @@ export default class Note extends Persistable(Supertype) {
         }
     }
 
+
+    static async findAndUpdateNoteById(notesId: string, message: string) {
+        try{
+            let note : Note = await Note.persistorFetchById(notesId);
+            note.message = message;
+            return note.save();
+        } catch(error){
+            console.log("error while updating note!");
+            throw error;
+        }
+    }
 
 }
 
