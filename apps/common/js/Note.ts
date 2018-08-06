@@ -1,4 +1,5 @@
 import {Supertype, supertypeClass, property, Persistable} from 'amorphic';
+import AmorphicSerializer from './AmorphicSerializer';
 
 @supertypeClass
 export default class Note extends Persistable(Supertype) {
@@ -11,16 +12,17 @@ export default class Note extends Persistable(Supertype) {
         this.message = message;
     }
 
+
     async save() {
         let txn = this.amorphic.begin();
         this.setDirty(txn);
         await this.amorphic.commit({transaction: txn});
     }
 
+
     static async getNoteById(notesId: string) {
         return Note.persistorFetchById(notesId);
     }
-
 
 
     static async getAllNotes() {
@@ -50,6 +52,10 @@ export default class Note extends Persistable(Supertype) {
             console.log("error while updating note!");
             throw error;
         }
+    }
+
+    public serialize() {
+        return JSON.parse(AmorphicSerializer.amorphicSerialize(this));
     }
 
 }
