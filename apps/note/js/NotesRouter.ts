@@ -4,6 +4,19 @@ import {Request, Response} from 'express';
 
 const router = express.Router();
 
+/* GET users listing. */
+router.get('/users', function(req, res, next) {
+    console.log("Hitting users router!!");
+    res.json([{
+        id: 1,
+        username: "james"
+    }, {
+        id: 2,
+        username: "tames"
+    }]);
+});
+
+
 router.post('/create', async (req: Request, res: Response) => {
     try {
         let message: string = req.body.message;
@@ -24,7 +37,7 @@ router.get('/get/:id', async (req: Request, res: Response) => {
         let notesId: string = req.params.id;
         console.log(`notesId ${notesId}`);
         let note: Note = await Note.getNoteById(notesId);
-        return res.status(200).send(note.message);
+        return res.json(note.serialize());
     } catch (error) {
         console.log(error);
         return res.status(500).send(error.message);
