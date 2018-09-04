@@ -1,7 +1,6 @@
 import axios from "axios/index";
 import {
-    Button, ButtonToolbar, FormGroup, FormControl, DropdownButton,
-    MenuItem, Col
+    Button, FormGroup, FormControl, Col
 } from 'react-bootstrap';
 import React from 'react';
 
