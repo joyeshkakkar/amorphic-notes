@@ -8,3 +8,9 @@ dump.rdb
 download
 yarn.lock
 package-lock.json
+.DS_Store
+*.map
+client/src/Deserealizer/AmorphicDeserializer.js
+package-lock.json
+client/src/AmorphicDeserializer.js.map
+package-lock.json

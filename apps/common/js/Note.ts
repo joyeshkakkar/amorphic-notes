@@ -6,10 +6,15 @@ export default class Note extends Persistable(Supertype) {
     @property()
     message: string;
 
+    @property()
+    title: string;
 
-    constructor(message: string) {
+
+
+    constructor(message: string, title: string) {
         super();
         this.message = message;
+        this.title = title;
     }
 
 
@@ -43,10 +48,11 @@ export default class Note extends Persistable(Supertype) {
     }
 
 
-    static async findAndUpdateNoteById(notesId: string, message: string) {
+    static async findAndUpdateNoteById(notesId: string, message: string, title: string) {
         try{
             let note : Note = await Note.persistorFetchById(notesId);
             note.message = message;
+            note.title = title;
             return note.save();
         } catch(error){
             console.log("error while updating note!");
@@ -57,7 +63,6 @@ export default class Note extends Persistable(Supertype) {
     public serialize() {
         return JSON.parse(AmorphicSerializer.amorphicSerialize(this));
     }
-
 }
 
 

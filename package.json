@@ -7,9 +7,15 @@
   "dependencies": {
     "amorphic": "2.4.2",
     "body-parser": "^1.18.3",
+    "bootstrap": "^3.3.7",
+    "bootstrap-theme": "^5.0.0",
     "connect-redis": "3.3.3",
     "express": "^4.16.3",
+    "nodemon": "^1.18.3",
     "pg": "^7.4.2",
+    "react": "^16.4.2",
+    "react-bootstrap": "^0.32.3",
+    "react-dom": "^16.4.2",
     "uuid-v4": "^0.1.0"
   },
   "devDependencies": {

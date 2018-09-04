@@ -12,7 +12,7 @@
   "dbdriver": "knex",
   "dbtype": "pg",
   "dbpath": "localhost",
-  "dbname": "amorphic_basicapp",
+  "dbname": "amorphic_notesapp",
   "dbuser": "nodejs",
   "dbpassword": "nodejs"
 }

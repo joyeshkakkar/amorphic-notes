@@ -1,6 +1,6 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
-import router from './NotesRouter';
+import notesRouter from './NotesRouter';
 
 
 export default class NotesService {
@@ -13,7 +13,7 @@ export default class NotesService {
         this.server
             .use(bodyParser.json())// for parsing application/json
             .use(bodyParser.urlencoded({extended: true})) // for parsing application/x-www-form-urlencoded
-            .use('/api/v1/notes', router)
+            .use('/api/v1/notes', notesRouter)
             .listen(port, () => console.log(`Listening at port:  ${port}`))
     }
 }
