@@ -6,7 +6,7 @@
   "objectCacheSeconds": 10,
   "sessionSecret": "Ey0veeljPcLsHitdxCG2",
 	"applications": {
-    "note": "apps/note"
+    "note": "server/note"
   },
 	"application": "note",
   "dbdriver": "knex",

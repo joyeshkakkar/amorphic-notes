@@ -2,8 +2,8 @@
 node_modules
 .postgres
 .redis
-apps/**/*.js
-apps/**/*.js.map
+server/**/*.js
+server/**/*.js.map
 dump.rdb
 download
 yarn.lock
